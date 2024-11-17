@@ -4,5 +4,4 @@ global:
 scrape_configs:
   - job_name: "cosmos"
     static_configs:
-      - targets: ["cosmos-mainnet:37010"]
-      - targets: ["dymension-mainnet:37020"]
+      - targets: ["bera-v2:37010"]
