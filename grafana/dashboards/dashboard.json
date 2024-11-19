@@ -1852,6 +1852,24 @@
         {
           "id": "merge",
           "options": {}
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Time": 0,
+              "name": 1,
+              "Value #E": 2,
+              "Value #F": 3,
+              "Value #G": 4,
+              "Value #H": 5,
+              "Value #D": 6,
+              "Value #B": 7,
+              "Value #A": 8,
+              "Value #C": 9
+            }
+          }
         }
       ],
       "type": "table"
