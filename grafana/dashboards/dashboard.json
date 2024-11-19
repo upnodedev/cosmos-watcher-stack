@@ -1668,6 +1668,42 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #G"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Empty Blocks"
+              },
+              {
+                "id": "custom.width",
+                "value": 80
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #H"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Execution Uptime"
+              },
+              {
+                "id": "custom.width",
+                "value": 80
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
           }
         ]
       },
@@ -1725,6 +1761,34 @@
           "instant": true,
           "range": false,
           "refId": "F"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "max(cosmos_validator_watcher_empty_blocks{chain_id=\"$chain_id\"}) by (name)",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "range": false,
+          "refId": "G"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "100 * (sum(rate(cosmos_validator_watcher_validated_blocks{chain_id=\"$chain_id\"}[5m])) by (name) - sum(rate(cosmos_validator_watcher_empty_blocks{chain_id=\"$chain_id\"}[5m])) by (name)) / sum(rate(cosmos_validator_watcher_validated_blocks{chain_id=\"$chain_id\"}[5m])) by (name)",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "range": false,
+          "refId": "H"
         },
         {
           "datasource": {
