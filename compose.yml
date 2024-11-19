@@ -40,7 +40,7 @@ services:
     depends_on:
       - loki
   bera-v2:
-    image: git://github.com/quertc/cosmos-validator-watcher.git#feat/txnslog
+    build: https://github.com/quertc/cosmos-validator-watcher.git#feat/txnslog
     restart: unless-stopped
     command: >
       --http-addr :37010
